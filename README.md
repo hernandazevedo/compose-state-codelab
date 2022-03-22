@@ -21,7 +21,7 @@ All Android applications display state to the user. A few examples of state in A
 
 In this codelab you will explore how to use and think about state when using Jetpack Compose. To do this, we will build a TODO application. At the end of this codelab you'll have built a stateful UI that displays an interactive, editable, TODO list.
 
-![b5c4dc05d1e54d5a.png](/codelabs/jetpack-compose-state/img/b5c4dc05d1e54d5a.png)
+![b5c4dc05d1e54d5a.png](https://developer.android.com/codelabs/jetpack-compose-state/img/b5c4dc05d1e54d5a.png)
 
 In the next section you'll learn about Unidirectional Data Flow – a design pattern that is core to understanding how to display and manage state when using Compose.
 
