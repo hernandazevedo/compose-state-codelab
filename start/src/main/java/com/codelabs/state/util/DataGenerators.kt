@@ -18,6 +18,7 @@ package com.codelabs.state.util
 
 import com.codelabs.state.todo.TodoIcon
 import com.codelabs.state.todo.TodoItem
+import kotlin.random.Random
 
 fun generateRandomTodoItem(): TodoItem {
     val message = listOf(
@@ -33,6 +34,10 @@ fun generateRandomTodoItem(): TodoItem {
     ).random()
     val icon = TodoIcon.values().random()
     return TodoItem(message, icon)
+}
+
+fun randomTint(): Float {
+    return Random.nextFloat().coerceIn(0.3f, 0.9f)
 }
 
 fun main() {

@@ -35,7 +35,3 @@ fun generateRandomTodoItem(): TodoItem {
     val icon = TodoIcon.values().random()
     return TodoItem(message, icon)
 }
-
-fun randomTint(): Float {
-    return Random.nextFloat().coerceIn(0.3f, 0.9f)
-}

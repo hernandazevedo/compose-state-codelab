@@ -97,7 +97,8 @@ fun TodoScreen(
                     TodoRow(
                         todo = todo,
                         onItemClicked = { onStartEdit(it) },
-                        modifier = Modifier.fillParentMaxWidth()
+                        modifier = Modifier.fillParentMaxWidth(),
+                        iconAlpha = todo.iconAlpha
                     )
                 }
             }
@@ -125,7 +126,7 @@ fun TodoScreen(
 @Composable
 fun TodoRow(
     todo: TodoItem, onItemClicked: (TodoItem) -> Unit, modifier: Modifier = Modifier,
-    iconAlpha: Float = remember(todo.id) { randomTint() }
+    iconAlpha: Float? = null
 ) {
     Row(
         modifier = modifier
@@ -137,7 +138,11 @@ fun TodoRow(
 
         Icon(
             imageVector = todo.icon.imageVector,
-            tint = LocalContentColor.current.copy(alpha = iconAlpha),
+            tint = if (iconAlpha != null) {
+                LocalContentColor.current.copy(alpha = iconAlpha)
+            } else {
+                LocalContentColor.current
+            },
             contentDescription = stringResource(id = todo.icon.contentDescription)
         )
     }
@@ -244,10 +249,6 @@ fun TodoItemInlineEditor(
             }
         }
     )
-}
-
-private fun randomTint(): Float {
-    return Random.nextFloat().coerceIn(0.3f, 0.9f)
 }
 
 @Preview

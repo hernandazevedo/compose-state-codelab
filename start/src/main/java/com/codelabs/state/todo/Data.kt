@@ -25,11 +25,13 @@ import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.RestoreFromTrash
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.codelabs.state.R
+import com.codelabs.state.util.randomTint
 import java.util.UUID
 
 data class TodoItem(
     val task: String,
     val icon: TodoIcon = TodoIcon.Default,
+    val iconAlpha: Float = randomTint(),
     // since the user may generate identical tasks, give them each a unique ID
     val id: UUID = UUID.randomUUID()
 )
